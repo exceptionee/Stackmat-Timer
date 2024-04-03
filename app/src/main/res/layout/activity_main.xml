@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundTint="#00FF0000"
+    tools:context=".App">
+
+    <FrameLayout
+        android:id="@+id/background_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="background"
+            android:scaleType="centerCrop"
+            android:tag="right"
+            app:srcCompat="@drawable/background" />
+
+    </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/left_pad"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="left pad"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:tag="left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/middle"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/hand_icon" />
+
+    <ImageButton
+        android:id="@+id/right_pad"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="right pad"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/middle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/hand_icon" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/middle"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="#000000"
+        android:minWidth="225dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/light"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/light_off"
+            app:layout_constraintEnd_toStartOf="@+id/time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/time" />
+
+        <com.example.stackmat_timer.Timer
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="200dp"
+            android:width="150dp"
+            android:background="@drawable/timer"
+            android:fontFamily="@font/digital_7"
+            android:padding="10dp"
+            android:text="0.00"
+            android:textAlignment="viewEnd"
+            android:textColor="#000000"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/power"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="power"
+            app:layout_constraintStart_toStartOf="@+id/time"
+            app:layout_constraintTop_toBottomOf="@+id/time"
+            app:srcCompat="@drawable/power" />
+
+        <ImageButton
+            android:id="@+id/inspect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="inspect"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time"
+            app:srcCompat="@drawable/inspect" />
+
+        <ImageButton
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="reset"
+            app:layout_constraintEnd_toEndOf="@+id/time"
+            app:layout_constraintTop_toBottomOf="@+id/time"
+            app:srcCompat="@drawable/reset" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
