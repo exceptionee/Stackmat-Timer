@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foregroundTint="#00FF0000"
-    tools:context=".App">
+    tools:context=".TimerActivity">
 
     <FrameLayout
         android:id="@+id/background_container"
@@ -73,14 +73,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
-        <ImageView
-            android:id="@+id/light"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/light_off"
-            app:layout_constraintEnd_toStartOf="@+id/time"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/time" />
+        <ImageButton
+            android:id="@+id/power"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="power"
+            app:layout_constraintStart_toStartOf="@+id/time"
+            app:layout_constraintTop_toBottomOf="@+id/time"
+            app:srcCompat="@drawable/power" />
 
         <com.example.stackmat_timer.Timer
             android:id="@+id/time"
@@ -94,22 +96,22 @@
             android:text="0.00"
             android:textAlignment="viewEnd"
             android:textColor="#000000"
-            android:textSize="40sp"
+            android:textSize="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/power"
+            android:id="@+id/reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="#00FFFFFF"
-            android:contentDescription="power"
-            app:layout_constraintStart_toStartOf="@+id/time"
+            android:contentDescription="reset"
+            app:layout_constraintEnd_toEndOf="@+id/time"
             app:layout_constraintTop_toBottomOf="@+id/time"
-            app:srcCompat="@drawable/power" />
+            app:srcCompat="@drawable/reset" />
 
         <ImageButton
             android:id="@+id/inspect"
@@ -122,17 +124,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/time"
             app:srcCompat="@drawable/inspect" />
-
-        <ImageButton
-            android:id="@+id/reset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="reset"
-            app:layout_constraintEnd_toEndOf="@+id/time"
-            app:layout_constraintTop_toBottomOf="@+id/time"
-            app:srcCompat="@drawable/reset" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
